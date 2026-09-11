@@ -13,7 +13,7 @@ export const AboutSection: React.FC = () => {
           {/* Left Column: Narrative Content */}
           <div className="lg:col-span-6 space-y-4 sm:space-y-6 text-left">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-amber-500/15 to-orange-500/15 border border-amber-400/30 text-amber-300 text-xs font-bold uppercase tracking-wider shadow-sm">
-              <span>🇮🇳</span>
+              <span></span>
               <span>మా గురించి • Indian Manufacturing Business</span>
             </div>
 
