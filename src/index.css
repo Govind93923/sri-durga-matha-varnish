@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@theme {
+  /* Calm, Attractive, Decent Industrial Slate Palette */
+  --color-industrial-950: #0d1117;
+  --color-industrial-900: #131822;
+  --color-industrial-850: #1a212e;
+  --color-industrial-800: #232c3d;
+  --color-industrial-750: #2e394e;
+  --color-industrial-700: #3c4962;
+  --color-industrial-600: #4f5f7e;
+  --color-industrial-500: #687ca0;
+  --color-industrial-400: #8c9ebf;
+  --color-industrial-300: #b5c3dc;
+  --color-industrial-200: #dce3f0;
+  --color-industrial-100: #f3f6fc;
+
+  /* Traditional Indian Desi Accent Colors - Calm, Royal & Decent */
+  --color-desi-maroon: #881337;
+  --color-desi-maroon-dark: #220810;
+  --color-desi-maroon-light: #9f1239;
+
+  --color-desi-gold: #d97706;
+  --color-desi-gold-light: #f59e0b;
+  --color-desi-gold-dark: #b45309;
+
+  --color-desi-saffron: #ea580c;
+  --color-desi-green: #10b981;
+
+  --color-varnish-amber: #f59e0b;
+  --color-varnish-amber-light: #fde68a;
+  --color-varnish-amber-dark: #b45309;
+
+  --color-varnish-ruby: #e11d48;
+  --color-varnish-ruby-light: #fda4af;
+  --color-varnish-ruby-dark: #9f1239;
+
+  --color-varnish-orange: #ea580c;
+  --color-varnish-orange-light: #fed7aa;
+  --color-varnish-orange-dark: #9a3412;
+
+  --color-varnish-gold: #eab308;
+  --color-varnish-gold-light: #fef08a;
+  --color-varnish-gold-dark: #a16207;
+
+  --color-varnish-clear: #38bdf8;
+  --color-varnish-clear-light: #bae6fd;
+  --color-varnish-clear-dark: #0284c7;
+
+  --font-heading: "Space Grotesk", "Inter", sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0d1117;
+  color: #f1f5f9;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar - Calm Slate with Soft Amber */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #232c3d;
+  border-radius: 4px;
+  border: 1px solid #2e394e;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d97706;
+}
+
+/* Glassmorphism & Calm Attractive Surfaces */
+.glass-panel {
+  background: rgba(19, 24, 34, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.45);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(24, 31, 44, 0.92);
+  border-color: rgba(217, 119, 6, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(217, 119, 6, 0.2);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(23, 30, 42, 0.85) 0%, rgba(15, 19, 28, 0.92) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.45);
+}
+
+.metallic-badge {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Calm Subtle Grid Pattern */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+}
+
+.radial-glow {
+  background: radial-gradient(circle at 50% 30%, rgba(217, 119, 6, 0.09) 0%, rgba(13, 17, 23, 0) 70%);
+}
+
+.radial-glow-ruby {
+  background: radial-gradient(circle at 50% 30%, rgba(185, 28, 28, 0.09) 0%, rgba(13, 17, 23, 0) 70%);
+}
+
+/* Subtle Text Gradient Utilities */
+.text-vibrant-gold {
+  background: linear-gradient(135deg, #fde68a 0%, #f59e0b 55%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-vibrant-ruby {
+  background: linear-gradient(135deg, #fecdd3 0%, #f43f5e 50%, #be123c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
