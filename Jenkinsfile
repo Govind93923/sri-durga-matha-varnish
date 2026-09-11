@@ -2,6 +2,10 @@ pipeline {
 
     agent any
 
+    tools {
+        nodejs 'Node22'
+    }
+
     stages {
 
         stage('Checkout') {
@@ -41,7 +45,6 @@ pipeline {
     }
 
     post {
-
         success {
             echo '======================================'
             echo 'PIPELINE SUCCESSFUL!'
