@@ -1,5 +1,4 @@
 pipeline {
-
     agent any
 
     tools {
@@ -42,19 +41,19 @@ pipeline {
                 sh 'docker build -t sri-durga-matha-varnish:latest .'
             }
         }
-    }
 
-  stage('Deploy') {
-    steps {
-        echo 'Deploying application...'
+        stage('Deploy') {
+            steps {
+                echo 'Deploying application...'
+                sh '''
+                    docker rm -f sri-durga-matha-varnish || true
+                    docker run -d \
+                        --name sri-durga-matha-varnish \
+                        -p 3000:80 \
+                        sri-durga-matha-varnish:latest
+                '''
+            }
+        }
 
-        sh '''
-            docker rm -f sri-durga-matha-varnish || true
-            docker run -d \
-                --name sri-durga-matha-varnish \
-                -p 3000:80 \
-                sri-durga-matha-varnish:latest
-        '''
-    }
-}
-}
+    } // end of stages block
+} // end of pipeline block
