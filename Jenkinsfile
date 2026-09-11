@@ -44,18 +44,17 @@ pipeline {
         }
     }
 
-    post {
-        success {
-            echo '======================================'
-            echo 'PIPELINE SUCCESSFUL!'
-            echo '======================================'
-        }
+  stage('Deploy') {
+    steps {
+        echo 'Deploying application...'
 
-        failure {
-            echo '======================================'
-            echo 'PIPELINE FAILED!'
-            echo 'Check the console output.'
-            echo '======================================'
-        }
+        sh '''
+            docker rm -f sri-durga-matha-varnish || true
+            docker run -d \
+                --name sri-durga-matha-varnish \
+                -p 3000:80 \
+                sri-durga-matha-varnish:latest
+        '''
     }
+}
 }
